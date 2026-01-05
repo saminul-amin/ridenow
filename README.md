@@ -25,6 +25,10 @@ This project is built using modern web technologies:
 -   **Routing**: [React Router](https://reactrouter.com/) (v7)
 -   **Icons**: [Lucide React](https://lucide.dev/)
 
+## Walkthrough Video
+
+[Click Here for the video!](https://drive.google.com/file/d/1r6sV4-4SrfARbp-ecSZMw5VG-I1NUIfv/view?usp=sharing)
+
 ## Contact
 
 Have questions or want to get in touch?
