@@ -8,6 +8,8 @@ import { Car, LayoutDashboard, History, User, LogOut, Menu, X, DollarSign } from
 import { cn } from '../utils/cn';
 import PageTransition from '../components/layout/PageTransition';
 
+import PageTitleUpdater from '../components/common/PageTitleUpdater';
+
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { data: userData } = useGetMeQuery(undefined);
@@ -38,6 +40,7 @@ const DashboardLayout = () => {
 
   return (
     <div className="flex h-screen bg-gray-100">
+      <PageTitleUpdater />
       {/* Sidebar - Desktop */}
       <aside className="hidden md:flex md:flex-col md:w-64 bg-white border-r border-gray-200">
         <div className="flex items-center h-16 px-6 border-b border-gray-200">
