@@ -59,7 +59,9 @@ const Profile = () => {
         toast.success('Profile updated successfully!');
         setIsEditing(false);
     } catch (error: any) {
-        toast.error(error.data?.message || 'Failed to update profile');
+        console.error('Profile update error:', error);
+        const errorMessage = error?.data?.message || error?.message || 'Failed to update profile';
+        toast.error(errorMessage);
     }
   };
 
@@ -69,7 +71,9 @@ const Profile = () => {
           toast.success('Vehicle details updated!');
           setIsVehicleEditing(false);
       } catch (error: any) {
-          toast.error(error.data?.message || 'Failed to update vehicle');
+          console.error('Vehicle update error:', error);
+          const errorMessage = error?.data?.message || error?.message || 'Failed to update vehicle';
+          toast.error(errorMessage);
       }
   };
 
@@ -84,7 +88,9 @@ const Profile = () => {
           resetPassword();
           setIsPasswordEditing(false);
       } catch (error: any) {
-          toast.error(error.data?.message || 'Failed to change password');
+          console.error('Password change error:', error);
+          const errorMessage = error?.data?.message || error?.message || 'Failed to change password';
+          toast.error(errorMessage);
       }
   };
 

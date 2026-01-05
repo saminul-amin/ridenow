@@ -39,12 +39,16 @@ const Register = () => {
       toast.success('Registration successful! Please login.');
       navigate('/login');
     } catch (error: any) {
-      if (error.data?.errorSources) {
-         error.data.errorSources.forEach((err: any) => {
+      console.error('Registration error:', error);
+      const errorData = error?.data;
+
+      if (errorData?.errorSources) {
+         errorData.errorSources.forEach((err: any) => {
             toast.error(err.message);
          });
       } else {
-         toast.error(error.data?.message || 'Registration failed. Please try again.');
+         const errorMessage = errorData?.message || error?.message || 'Registration failed. Please try again.';
+         toast.error(errorMessage);
       }
     }
   };

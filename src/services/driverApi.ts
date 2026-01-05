@@ -4,7 +4,7 @@ import type { RootState } from '../app/store';
 export const driverApi = createApi({
   reducerPath: 'driverApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5000/api',
+    baseUrl: 'https://ride-booking-server.vercel.app/api',
     prepareHeaders: (headers, { getState }) => {
       const token = (getState() as RootState).auth.token;
       if (token) {

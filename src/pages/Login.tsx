@@ -34,12 +34,18 @@ const Login = () => {
       toast.success('Login successful!');
       navigate('/dashboard'); 
     } catch (error: any) {
-      if (error.data?.errorSources) {
-         error.data.errorSources.forEach((err: any) => {
+      console.error('Login error:', error);
+      toast.error(error?.data?.message);
+      
+      const errorData = error?.data;
+      
+      if (errorData?.errorSources) {
+         errorData.errorSources.forEach((err: any) => {
             toast.error(err.message);
          });
       } else {
-        toast.error(error.data?.message || 'Invalid email or password');
+        const errorMessage = errorData?.message || error?.message || 'Invalid email or password';
+        toast.error(errorMessage);
       }
     }
   };
